@@ -54,7 +54,7 @@ Go to the root folder where Dockerfile is location
 To run the docker container:
 ```shell
   Note: Please ensure IP address of machine is updated in main.js todo
-  docker run pupdock
+  docker run <container_name>
 ```
 
 ### Note
