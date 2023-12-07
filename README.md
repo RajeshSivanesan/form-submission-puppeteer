@@ -1,47 +1,14 @@
 # Form Submission
 1. Implemented a nestjs api which does form submission on invocation
 2. Have not deployed nestjs service to AWS, as my free tier quota is over
-3. So we have to run this on the local, git 
-4. Backend Integrations
-5. Logout functionality
-6. Filters
-    -- text search (realtime)
-    -- local search on ID, title, description
-    -- priority and status (realtime)
-7. Responsive UI
+3. So we have to run this on the local and change the ip in main.js based on the current machine
 
 <hr />
 
 ## Tech stack
- - React / Typescript / Javascript
- - CSS
+ - Nest.js / Typescript / Javascript
  - REST APIs
- - Material ui
- - Mongo db
- - Express
- - jest / React testing library
- 
-### Screenshots
-![Alt text](image.png)
-
-![Alt text](image-1.png)
-
-![Alt text](image-2.png)
-
-![Alt text](image-3.png)
-
-![Alt text](image-4.png)
-
-![Alt text](image-5.png)
-
-![Alt text](image-6.png)
-
-## Bonus Features:
-1. Implemented client search functionality for other fields
-2. Test cases (FE) - 45% coverage
-3. Debouncing the text search by 1s, to avoid frequent api calls
-4. Logout functionality
-5. Export as CSV / Print Preview
+ - Puppeteer
 
 ### Running the app locally
 
@@ -52,19 +19,19 @@ To run the app, follow these steps.
 
 To clone the project
 ```shell
-  git clone git@github.com:RajeshSivanesan/tasks-crud-with-ui.git
+  git clone git@github.com:RajeshSivanesan/form-submission-puppeteer.git  
   OR
-  git clone https://github.com/RajeshSivanesan/tasks-crud-with-ui.git
+  git clone https://github.com/RajeshSivanesan/form-submission-puppeteer.git
 ```
 
 Move to the directory
 ```shell
-  cd tasks-crud-with-ui
+  cd form-submission-puppeteer
 ```
 
-### To run FE
+### To run Nest.js server
 ```shell
-  cd client
+  cd api
 ```
 
 To install dependencies:
@@ -72,29 +39,25 @@ To install dependencies:
   npm install
 ```
 
-To run the app:
+To run the nestjs server:
 ```shell
-  npm run dev
+  npm start
 ```
 
-To launch the ui:
+### To run the form automation using docker
+Go to the root folder where Dockerfile is location
 ```shell
-  Please check the url which prints post npm run dev
-  Default - http://localhost:5173/
-  If the port is busy, it will pick the next one - 5174
-  so always keep an eye on the port number
+  docker build -t <container_name> .
 ```
 
-To run the tests:
+To run the docker container:
 ```shell
-  npm run test:coverage
+  Note: Please ensure IP address of machine is updated in main.js todo
+  docker run pupdock
 ```
 
-### To run BE
-```shell
-  cd server
-```
-
-To install dependencies:
-```shell
-  npm install --force
+### Note
+1) AWS deployment was not done because of free tier limit reached
+2) I tried different ways of exposing localhost port to docker, but it didnt work (port mapping, host options i tried)
+3) Currently the puppeteer browser is not closed, for confirming form submitted
+as expected.

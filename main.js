@@ -1,5 +1,6 @@
 (async() => {
-  fetch('http://192.168.1.213:3000/form/submit', {
+  const IP = '192.168.1.213'; // to-do: change the ip address based on the machine
+  fetch(`http://${IP}:3000/form/submit`, {
     method: 'GET'
   })
   .then((response) => response.text())
