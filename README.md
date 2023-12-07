@@ -2,6 +2,7 @@
 1. Implemented a nestjs api which does form submission on invocation
 2. Have not deployed nestjs service to AWS, as my free tier quota is over
 3. So we have to run this on the local and change the ip in main.js based on the current machine
+4. Docker has to be installed globally. I used docker desktop in my windows machine.
 
 <hr />
 
